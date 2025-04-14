@@ -1,0 +1,56 @@
+<section id="projects" class="mb-5">
+  <div class="sticky top-0 z-20 bg-white d-lg-none">
+    <h2 class="heading-medium font-bold py-4">PROJECTS</h2>
+  </div>
+  <h2 class="heading-medium font-bold py-4 d-none d-lg-block" style="padding:20px;">PROJECTS</h2>
+  @for(p of projects; track p.id) {
+  <a target="_blank" [attr.href]="p.href" class="text-decoration-none p-0">
+    <div
+      class="projects-container group mb-3 transition duration-200 ease-in-out cursor-pointer"
+      (mouseenter)="hoveredExp = p.id"
+      (mouseleave)="hoveredExp = null"
+    >
+      <div class="row">
+        <div class="col-3  p-0">
+          <img [alt]="p?.alt" [src]="p?.imgUrl" class="img-thumbnail p-0" />
+        </div>
+        <div class="col-1"></div>
+        <div class="col-8">
+          <h3
+            class="header-small inline-flex gap-1 items-center transition duration-200 group-hover:text-green-400"
+          >
+            <span>{{ p.company }}</span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              class="h-[16px] w-[16px] transition-transform duration-200 ease-in-out group-hover:-translate-y-[5px] group-hover:translate-x-[5px] group-hover:text-green-400"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                clip-rule="evenodd"
+              />
+            </svg>
+          </h3>
+          <p class="mt-2">{{ p.description }}</p>
+
+          <div class="social-media-icons">
+            <ul
+              class="list-unstyled d-flex flex-wrap gap-3 align-items-center text-white w-100 mb-0"
+            >
+              @for(lang of p.programmingLang; track lang) {
+              <li>
+                <div class="badge-container">
+                  <p class="badge-text">{{ lang }}</p>
+                </div>
+              </li>
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+  }
+</section>

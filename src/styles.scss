@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+.bg-color {
+  background-color: #0f172a;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.body {
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color: #0f172a;
+}
+
+.heading-medium  {
+  background-color: #0f172a !important;
+ 
+}
+
+
+
+
+.header-1 {
+  font-size: 36px;
+}
+
+.header-2 {
+  font-size: 18px;
+}
+
+h1, h2, i {
+  color: #E2E8F2;  /* removed h3 here */
+}
+
+p {
+  color: #94A3B8;
+}
+
+.heading-medium {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+}
+
+.mb-5 {
+  margin-bottom: 5rem !important;
+}
+
+.header-small {
+    font-size: 16px;
+    font-weight: 600 !important;
+    @apply text-white;
+  }
+  
+
+  .group:hover .header-small, 
+  .group:hover .header-small svg {
+color: #5EEAD4;
+  }
+
+.exp-container {
+  @apply transition duration-200 ease-in-out;
+}
+
+/* If you're still using this (it works only in some setups): */
+:host(:has(.exp-container:hover)) .exp-container:not(:hover) {
+  @apply blur-sm opacity-50;
+}
+
+@media (pointer: coarse) {
+  #cursorGlow {
+    display: none;
+  }
+}
+
+
+@media (min-width: 992px) { 
+  .body {
+    min-height: 100vh;
+    width: 100vw;
+    margin: 0;
+    background-color: #0f172a;
+    background-image: radial-gradient(
+      600px at center center,
+      rgba(255, 255, 255, 0.02),
+      transparent 80%
+    );
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+  }
+  
+
+
+  #cursorGlow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 800px;
+    height: 800px;
+    pointer-events: none;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+  
+    background: radial-gradient(
+      circle,
+      rgba(147, 197, 253, 0.2) 0%,  
+      rgba(147, 197, 253, 0.12) 20%,
+      rgba(147, 197, 253, 0.07) 40%,
+      rgba(147, 197, 253, 0.03) 60%,
+      rgba(147, 197, 253, 0.01) 80%,
+      rgba(147, 197, 253, 0) 100%
+    );
+  
+    opacity: 0.7;
+    mix-blend-mode: screen;
+    filter: blur(80px);
+    transition: top 0.05s ease, left 0.05s ease;
+  }
+  
+  
+  
+  @keyframes glowPulse {
+    0%, 100% {
+      transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.02);
+    }
+  }
+  
+  #cursorGlow {
+    animation: glowPulse 6s ease-in-out infinite;
+  }
+
+  
+
+  .heading-medium  {
+    background-color: transparent !important;
+   
+  }
+  
+}

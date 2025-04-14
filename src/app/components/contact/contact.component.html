@@ -1,0 +1,124 @@
+<div class="mb-5">
+  <div
+    class="heading-container lg:static mx-lg-5 mb-3 sticky top-0 z-10 d-lg-none"
+  >
+    <h2 class="heading-medium font-bold py-4">CONTACT ME</h2>
+  </div>
+  <h2 class="heading-medium  mb-3 pb-3 d-none d-lg-block">CONTACT ME</h2>
+
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In possimus, recusandae, odit expedita repellat ad autem modi, nemo eveniet eos iusto. Velit ut odio, sed iste, perferendis, ex iure explicabo commodi non similique cum labore quibusdam esse repellendus! Quia deserunt culpa unde sint, obcaecati sed id consequatur cumque distinctio blanditiis.</p>
+  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+    <div class="d-flex flex-column">
+      <div class="w-100 section-container pb-3">
+        <ng-container *ngIf="!messageIsSent; else emailMessage">
+          <p class="fw-bold p-0 mb-1"></p>
+
+          <!-- Email -->
+          <div class="form-group mb-3">
+            <div class="input-container">
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                formControlName="email"
+                [ngClass]="{
+                  'has-value': email?.value,
+                  'invalid-input':
+                    email?.invalid && (email?.touched || email?.dirty)
+                }"
+                (focus)="onFocus('email')"
+                (blur)="onBlur('email')"
+                required
+              />
+              <label for="email">Email *</label>
+            </div>
+            <div
+              *ngIf="email?.invalid && btnPressed"
+              class="invalid-feedback mt-0"
+            >
+              <label class="text-danger label-danger"
+                >Please enter a valid emailadress</label
+              >
+            </div>
+          </div>
+
+          <!-- Name -->
+          <div class="form-group mb-3">
+            <div class="input-container">
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                formControlName="name"
+                [ngClass]="{
+                  'has-value': name?.value,
+                  'invalid-input':
+                    name?.invalid && (name?.touched || name?.dirty)
+                }"
+                (focus)="onFocus('name')"
+                (blur)="onBlur('name')"
+                required
+              />
+              <label for="name">Name *</label>
+            </div>
+            <div
+              *ngIf="(name?.invalid) && btnPressed"
+              class="invalid-feedback mt-0"
+            >
+              <label class="text-danger label-danger"
+                >Please enter your name</label
+              >
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group mb-3">
+            <div class="textarea-input-container">
+              <textarea
+                rows="4"
+                class="form-control"
+                id="message"
+                formControlName="message"
+                [ngClass]="{
+                  'has-value': message?.value,
+                  'invalid-input':
+                    message?.invalid && (message?.touched || message?.dirty)
+                }"
+                (focus)="onFocus('message')"
+                (blur)="onBlur('message')"
+                required
+              ></textarea>
+              <label for="message" class="textarea-label">Message *</label>
+            </div>
+            <div
+              *ngIf="message?.invalid && btnPressed"
+              class="invalid-feedback mt-0"
+            >
+              <label class="text-danger label-danger"
+                >Please enter a message</label
+              >
+            </div>
+          </div>
+        </ng-container>
+
+        <!-- Message Sent Status -->
+        <ng-template #emailMessage>
+          <p class="fw-bold p-0 mb-1 text-center text-lg-start">
+            {{ emailStatusMessage }}
+          </p>
+        </ng-template>
+      </div>
+
+      <!-- Submit Button -->
+      <div *ngIf="!messageIsSent" class="col-12 p-0 text-right ps-md-0 mb-3 ">
+        <button
+          class="btn m-0 px-5 ms-auto send-btn"
+          type="submit"
+          [disabled]="emailIsLoading"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

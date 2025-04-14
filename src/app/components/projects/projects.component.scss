@@ -1,0 +1,41 @@
+
+
+.badge-container {
+    color: white;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    background-color: rgba(66, 74, 100, 0.275);
+    border-radius: 99999;
+ }
+
+
+  .projects-container {
+    transition: background-color 0.2s ease;
+ 
+    padding: 24px 12px;
+     border-radius: 5px;
+   
+ 
+  }
+
+
+ .badge-text {
+   color: #5EEAD4;
+   font-size: 14px;
+   margin: 0;
+   padding: 0;
+ }
+
+ @media (min-width: 992px) { 
+  .projects-container { 
+    padding: 1rem 2rem;
+
+    &:hover {
+      background-color: #1e293b;
+      cursor: pointer;
+   }
+  }
+  
+}
+  
+ 
