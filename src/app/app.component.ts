@@ -31,11 +31,26 @@ export class AppComponent implements AfterViewInit {
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
+      const glow = document.getElementById('cursorGlow') as HTMLElement | null;
+      if (!glow) return;
+  
+      let latestX = 0;
+      let latestY = 0;
+      let isAnimating = false;
+  
+      const updateGlow = () => {
+        glow.style.left = `${latestX}px`;
+        glow.style.top = `${latestY}px`;
+        isAnimating = false;
+      };
+  
       document.addEventListener('mousemove', (e: MouseEvent) => {
-        const glow = document.getElementById('cursorGlow') as HTMLElement | null;
-        if (glow) {
-          glow.style.top = `${e.clientY}px`;
-          glow.style.left = `${e.clientX}px`;
+        latestX = e.clientX;
+        latestY = e.clientY;
+  
+        if (!isAnimating) {
+          requestAnimationFrame(updateGlow);
+          isAnimating = true;
         }
       });
     }
