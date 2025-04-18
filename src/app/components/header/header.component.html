@@ -1,22 +1,21 @@
-
-
-<div class="h-100 p-y d-flex flex-column">
+<header class="h-100 p-y d-flex flex-column" role="banner">
   <div class="col-12 mx-lg-0">
-    <div class="d-flex flex-column header">
+    <div class="d-flex flex-column header" aria-labelledby="site-title site-role">
       <div class="text-white mb-3">
-        <h1 class="header-1 mb-2">Pierre Lidholm</h1>
-        <h2 class="header-2">Full-stack developer</h2>
+        <h1 id="site-title" class="header-1 mb-2">Pierre Lidholm</h1>
+        <h2 id="site-role" class="header-2">Full-stack developer</h2>
       </div>
       <div class="text-secondary fs-6">
         <p>I build accessible digital experiences for the web.</p>
       </div>
     </div>
   </div>
-  <div class="col-12 mt-5 d-none d-lg-block">
+
+  <nav class="col-12 mt-5 d-none d-lg-block" aria-label="Primary">
     <app-nav></app-nav>
-  </div>
-  <div class="col-12 mt-auto">
+  </nav>
+
+  <div class="col-12 mt-auto" aria-label="Social media links">
     <app-social-media></app-social-media>
   </div>
-</div>
-
+</header>

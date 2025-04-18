@@ -1,4 +1,4 @@
-<div class="mb-5">
+<div class="mb-5 ">
   <div
     class="heading-container lg:static mx-lg-5 mb-3 sticky top-0 z-10 d-lg-none"
   >
@@ -6,14 +6,14 @@
   </div>
   <h2 class="heading-medium  mb-3 pb-3 d-none d-lg-block">CONTACT ME</h2>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In possimus, recusandae, odit expedita repellat ad autem modi, nemo eveniet eos iusto. Velit ut odio, sed iste, perferendis, ex iure explicabo commodi non similique cum labore quibusdam esse repellendus! Quia deserunt culpa unde sint, obcaecati sed id consequatur cumque distinctio blanditiis.</p>
+  <p *ngIf="!messageIsSent">I'm currently open to new opportunities and collaborations. If you have a role or project you'd like to discuss, 
+    feel free to reach out using the form below.</p>
   <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
     <div class="d-flex flex-column">
       <div class="w-100 section-container pb-3">
-        <ng-container *ngIf="!messageIsSent; else emailMessage">
+        <ng-container *ngIf="!messageIsSent && !showSpinner; else emailMessage">
           <p class="fw-bold p-0 mb-1"></p>
 
-          <!-- Email -->
           <div class="form-group mb-3">
             <div class="input-container">
               <input
@@ -42,7 +42,7 @@
             </div>
           </div>
 
-          <!-- Name -->
+  
           <div class="form-group mb-3">
             <div class="input-container">
               <input
@@ -71,7 +71,25 @@
             </div>
           </div>
 
-          <!-- Message -->
+          <div class="form-group mb-3">
+            <div class="input-container">
+              <input
+                type="text"
+                class="form-control"
+                id="company"
+                [ngClass]="{
+                  'has-value': company?.value,
+                }"
+                formControlName="company"
+                (focus)="onFocus('company')"
+                (blur)="onBlur('company')"
+                required
+              />
+              <label for="company">Company</label>
+            </div>
+          </div>
+
+         
           <div class="form-group mb-3">
             <div class="textarea-input-container">
               <textarea
@@ -101,11 +119,33 @@
           </div>
         </ng-container>
 
+        <ng-container *ngIf="showSpinner">
+          <div class="w-full px-6 py-5 text-center text-white shadow-lg bg-[#1e293b]/80 rounded-2xl mt-4">
+            <div class="flex flex-col items-center">
+              <!-- Spinner -->
+              <div class="mb-3">
+                <div class="w-10 h-10 border-4 border-[#5eead4] border-t-transparent rounded-full animate-spin"></div>
+              </div>
+              <p class="text-lg font-semibold leading-relaxed">
+                Sending message...
+              </p>
+            </div>
+          </div>
+        </ng-container>
+        
+
         <!-- Message Sent Status -->
         <ng-template #emailMessage>
-          <p class="fw-bold p-0 mb-1 text-center text-lg-start">
-            {{ emailStatusMessage }}
-          </p>
+          <div *ngIf="!showSpinner" class="w-full px-6 py-5 text-center text-white shadow-lg bg-[#1e293b]/80 rounded-2xl mt-4">
+            <div class="flex flex-col items-center">
+              <div class="bg-[#5eead4]/10 p-4 rounded-full mb-3">
+                <i class="fa-solid fa-circle-check text-[#5eead4] text-3xl"></i>
+              </div>
+              <p class="text-lg font-semibold leading-relaxed">
+                {{ emailStatusMessage }}
+              </p>
+            </div>
+          </div>
         </ng-template>
       </div>
 

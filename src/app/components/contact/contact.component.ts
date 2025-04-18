@@ -9,7 +9,7 @@ import {
 import emailjs from '@emailjs/browser';
 import { environment } from '../../../../src/environments/environment';
 
-type Field = 'email' | 'name' | 'message';
+type Field = 'email' | 'name' | 'message' | 'company';
 
 @Component({
   selector: 'app-contact',
@@ -34,13 +34,17 @@ export class ContactComponent {
     email: false,
     name: false,
     message: false,
+    company: false
   };
+
+  showSpinner: boolean = false;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       email: ['', [Validators.email, Validators.required]],
       name: ['', Validators.required],
       message: ['', Validators.required],
+      company: ['']
     });
 
     this.contactForm.valueChanges.subscribe(() => {
@@ -78,6 +82,10 @@ export class ContactComponent {
     return this.contactForm.get('message');
   }
 
+  get company() {
+    return this.contactForm.get('company');
+  }
+
   onFocus(field: Field) {
     this.focusedFields[field] = true;
   }
@@ -95,7 +103,7 @@ export class ContactComponent {
     }
 
     this.emailIsLoading = true;
-
+    this.showSpinner = true;
     emailjs
       .send(
         this.SERVICE_ID,
@@ -104,12 +112,13 @@ export class ContactComponent {
           name: this.contactForm.value.name,
           email: this.contactForm.value.email,
           message: this.contactForm.value.message,
+          company: this.contactForm.value.company
         },
         this.USER_ID
       )
       .then(
         (response) => {
-          console.log('SUCCESS!', response.status, response.text);
+          this.showSpinner = false;
           this.emailStatusMessage =
             'Thank you for reaching out! I will get back to you as soon as possible.';
           this.emailIsLoading = false;
@@ -118,10 +127,10 @@ export class ContactComponent {
           this.inputIsValid = false;
         },
         (err) => {
-          console.log('FAILED...', err);
+          this.showSpinner = false;
           this.emailStatusMessage = 'Something went wrong. Please try again!';
           this.emailIsLoading = false;
-          this.messageIsSent = true;
+          this.messageIsSent = false;
         }
       );
   }
