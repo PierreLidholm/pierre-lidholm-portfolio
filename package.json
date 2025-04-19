@@ -7,7 +7,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:pierre-lidholm-portfolio": "node dist/pierre-lidholm-portfolio/server/server.mjs",
     "tailwind:watch": "tailwindcss -i ./src/styles/tailwind.scss -o ./src/styles/tailwind-generated.css --watch"
   },
   "private": true,
@@ -20,7 +19,6 @@
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/platform-server": "^19.2.0",
     "@angular/router": "^19.2.0",
-    "@angular/ssr": "^19.2.5",
     "@emailjs/browser": "^4.4.1",
     "bootstrap": "^5.3.3",
     "express": "^4.18.2",
