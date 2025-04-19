@@ -18,4 +18,8 @@ export class ExperienceSectionComponent {
   constructor() {
     this.experiences = experiencesData;
   }
+
+  trackExp(index: number, exp: any): string {
+    return exp.id;
+  }
 }
