@@ -1,46 +1,55 @@
 <section id="experience" aria-labelledby="experience-heading" class="mb-5">
-  <!-- Sticky mobile heading -->
   <div class="sticky top-0 z-20 bg-white d-lg-none">
     <h2 id="experience-heading" class="heading-medium font-bold py-4">
       EXPERIENCE
     </h2>
   </div>
 
-  <!-- Desktop heading -->
-  <h2 class="heading-medium font-bold py-4 d-none d-lg-block" style="padding: 20px;" aria-hidden="true">
+  <h2
+    class="heading-medium font-bold py-4 d-none d-lg-block"
+    style="padding: 20px"
+    aria-hidden="true"
+  >
     EXPERIENCE
   </h2>
 
-  <!-- Experience list -->
   <ul class="list-unstyled" role="list">
     @for (exp of experiences; track exp.id) {
-    <li>
+    <li role="listitem"
+      [class.blurred]="hoveredExp !== null && hoveredExp !== exp.id"
+      (mouseenter)="hoveredExp = exp.id"
+      (mouseleave)="hoveredExp = null"
+    >
       <a
         target="_blank"
         [attr.href]="exp.href"
-        class="text-decoration-none p-0"
-        [attr.aria-label]="'View more about {{ exp.role }} at {{ exp.company }}'"
+        class="text-decoration-none p-0 text-hover"
+        [attr.aria-label]="
+          'View more about {{ exp.role }} at {{ exp.company }}'
+        "
       >
         <article
-          class="exp-container group mb-3 transition duration-200 ease-in-out cursor-pointer"
+          class="exp-container group mb-3 transition duration-200 ease-in-out cursor-pointer transition-all"
           (mouseenter)="hoveredExp = exp.id"
           (mouseleave)="hoveredExp = null"
         >
           <div class="row">
             <div class="col-12 p-0 col-md-3">
-              <p>{{ exp.startDate }} - {{ exp.endDate }}</p>
+              <p class="start-end-text">
+                {{ exp.startDate }} - {{ exp.endDate }}
+              </p>
             </div>
             <div class="col-md-1"></div>
             <div class="col-12 col-md-8 p-0 pr-lg-2">
               <h3
-                class="header-small inline-flex gap-1 items-center transition duration-200 group-hover:text-green-400"
+                class="hover-text header-small inline-flex gap-1 items-center transition duration-200"
               >
-                <span>{{ exp.role }} · {{ exp.company }}</span>
+                {{ exp.role }} · {{ exp.company }}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 20 20"
                   fill="currentColor"
-                  class="h-[16px] w-[16px] transition-transform duration-200 ease-in-out group-hover:-translate-y-[5px] group-hover:translate-x-[5px] group-hover:text-green-400"
+                  class="h-[16px] w-[16px] transition-transform duration-200 ease-in-out group-hover:-translate-y-[5px] group-hover:translate-x-[5px]"
                   role="img"
                   aria-hidden="true"
                   focusable="false"

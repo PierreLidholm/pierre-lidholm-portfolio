@@ -33,7 +33,7 @@ html {
 }
 
 h1, h2, i {
-  color: #E2E8F2;  /* removed h3 here */
+  color: #E2E8F2; 
 }
 
 p {
@@ -52,23 +52,44 @@ p {
 .header-small {
     font-size: 16px;
     font-weight: 600 !important;
-    @apply text-white;
+    color: white; 
   }
   
 
-  .group:hover .header-small, 
-  .group:hover .header-small svg {
-color: #5EEAD4;
+  .badge-text {
+    color: #5EEAD4;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+  }
+
+  li:hover .header-small,
+  li:hover .header-small svg {
+    color: #5EEAD4;
   }
 
 .exp-container {
   @apply transition duration-200 ease-in-out;
 }
 
-/* If you're still using this (it works only in some setups): */
 :host(:has(.exp-container:hover)) .exp-container:not(:hover) {
   @apply blur-sm opacity-50;
 }
+
+.badge-container {
+  color: white;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  background-color: rgba(66, 74, 100, 0.275);
+  border-radius: 99999;
+}
+
+.blurred {
+  filter: blur(2px);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
 
 @media (pointer: coarse) {
   #cursorGlow {
