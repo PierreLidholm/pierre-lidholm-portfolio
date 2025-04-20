@@ -21,7 +21,7 @@ export const experiencesData: Experience[] = [
       Developed backend solutions using C# and .NET, including integrations with both third-party systems and internal services.
     </li>
     <li>
-      Contributed to a Backend-for-Frontend (BFF) architecture to support new frontend services.
+      Contributed to a Backend-for-Frontend architecture to support new frontend services.
     </li>
     <li>
       Used GitHub for source control management.
