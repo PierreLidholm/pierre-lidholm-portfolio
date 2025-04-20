@@ -19,11 +19,13 @@ export const projectsData: Project[] = [
     company: 'Adam Augustsson AB',
     href: 'https://www.adamaugustsson.se',
     description: `
-      Worked on backend development in C# and .NET, including integrations with third-party systems and internal services. 
-      Contributed to a Backend-for-Frontend (BFF) solution to support new frontend services. 
-      Managed source control using GitHub. On the frontend, maintained and developed micro frontends and product pages in Angular, 
-      ensuring accessibility and usability for all users. Performed testing with Jest, Lighthouse, Axe, and Playwright. 
-      Worked in an agile environment using Scrum, and deployed solutions using CI/CD pipelines with system and integration testing.
+     <ul class="text-color-grey mb-3 p-0">
+    <li>Designed and built a personal website for a tattoo artist and painter to showcase artwork and services.</li>
+    <li>Integrated a fully functional webshop using the Shopify API to manage products, inventory, and orders.</li>
+    <li>Developed the frontend with Angular and TypeScript, focusing on responsiveness and user experience.</li>
+    <li>Implemented custom components and features to reflect the artist's unique brand and style.</li>
+    <li>Handled all aspects of the project from concept to deployment.</li>
+  </ul>
     `,
     startDate: '2024-01-01',
     endDate: '2024-05-01',
