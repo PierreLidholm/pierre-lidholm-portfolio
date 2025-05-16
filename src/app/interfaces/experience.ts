@@ -16,29 +16,17 @@ export const experiencesData: Experience[] = [
     role: 'Full-stack Developer',
     href: 'https://seb.se/',
     description: `
-     <ul class="text-color-grey mb-3 p-0">
-    <li>
-      Developed backend solutions using C# and .NET, including integrations with both third-party systems and internal services.
-    </li>
-    <li>
-      Contributed to a Backend-for-Frontend architecture to support new frontend services.
-    </li>
-    <li>
-      Used GitHub for source control management.
-    </li>
-    <li>
-      Maintained and developed micro frontends and product pages using Angular, with a focus on accessibility and user experience.
-    </li>
-    <li>
-      Performed testing using tools such as Jest, Lighthouse, Axe, and Playwright.
-    </li>
-    <li>
-      Worked in an agile team environment following Scrum methodology.
-    </li>
-    <li>
-      Deployed solutions through CI/CD pipelines, including system and integration testing.
-    </li>
-  </ul>
+     <div class="text-color-grey mb-3 p-0">
+  <p>At SEB, I worked as a full-stack developer focusing on both frontend and backend within a microservices architecture. On the backend, I developed and maintained services using C# and .NET.</p>
+
+<p>I also worked on a backend-for-frontend (BFF) solution to support new frontend implementations.</p>
+
+<p>All code was managed in GitHub with version control and CI/CD pipelines, including automated system and integration tests for each deployment.</p>
+
+<p>On the frontend, I developed and maintained microfrontend components and product pages on SEB’s website using Angular, with a strong focus on accessibility in compliance with WCAG standards. Testing was carried out using tools such as Jest, Lighthouse, Axe, and Playwright.</p>
+
+<p>We followed agile methodologies using Scrum, with sprint planning and daily stand-ups in close collaboration with developers, designers, and product owners.</p>
+  </div>
     `,
     startDate: 'Dec 2023',
     endDate: 'Dec 2024',
@@ -58,15 +46,15 @@ export const experiencesData: Experience[] = [
     role: 'Full-stack Developer',
     href: 'https://viggeby.com/',
     description: `
-       <ul class="text-color-grey mb-3 p-0">
-      <li>Developed and maintained applications and APIs using ASP.NET, .NET Core, and C#.</li>
-      <li>Built web applications with AngularJS, Angular, JavaScript, and TypeScript.</li>
-      <li>Designed and managed databases with MSSQL.</li>
-      <li>Handled full project lifecycle — from planning to testing.</li>
-      <li>Implemented performance optimizations to enhance user experience.</li>
-      <li>Developed new features and improved systems based on user requirements.</li>
-      <li>Used Azure DevOps for source control and CI/CD processes.</li>
-    </ul>
+       <div class="text-color-grey mb-3 p-0">
+     <p>I worked as a full-stack developer responsible for developing and maintaining web-based applications and APIs in .NET using C#. I built new solutions as well as enhanced existing systems.</p>
+
+<p>Frontend development was done using Angular and AngularJS, where I worked with both TypeScript and JavaScript to create responsive and user-friendly interfaces. I was also responsible for the database layer, designing and building MSSQL databases.</p>
+
+<p>My role covered the full development cycle, from requirements analysis and planning to implementation, testing, and deployment. I collaborated with clients to understand user needs and translate them into technical solutions, continuously implementing new features and improving existing systems.</p>
+
+<p>Version control and deployments were handled using Azure DevOps.</p>
+    </div>
     `,
     startDate: 'June 2021',
     endDate: 'April 2023',
@@ -87,11 +75,11 @@ export const experiencesData: Experience[] = [
     role: 'Software Developer Intern',
     href: 'https://www.novotek.com/se/',
     description: `
-       <ul class="text-color-grey mb-3 p-0">
-      <li>Developed an industrial web app using Proficy Operations Hub to visualize the production line and each manufacturing step.</li>
-      <li>Rendered a canvas-based UI based on coordinate data retrieved from an API.</li>
-      <li>Handled frontend development using HTML, CSS, and JavaScript</li>
-    </ul>
+       <div class="text-color-grey mb-3 p-0">
+      <p>I developed an application in Proficy Operations Hub, a platform used to build industrial applications for web-based intelligence. I extended an existing application that visualized a production process, where each step in the process was rendered on a canvas using coordinates and data retrieved from an API.</p>
+
+<p>The frontend was built using HTML, CSS, and JavaScript.</p>
+    </div>
     `,
     startDate: 'Jan 2021',
     endDate: 'June 2021',
@@ -103,11 +91,11 @@ export const experiencesData: Experience[] = [
     href: 'https://www.beguine.com/',
     role: 'Software Developer Intern',
     description: `
-      <ul class="text-color-grey mb-3 p-0">
-      <li>Created a dashboard application to display business metrics including news, sales data, revenue, and product performance.</li>
-      <li>Built dynamic graphs and visualizations to present data effectively.</li>
-      <li>Used HTML, CSS, and JavaScript for frontend development.</li>
-    </ul>
+      <div class="text-color-grey mb-3 p-0">
+      <p>I created a dashboard for a company that displayed news, sales data, revenue, and product performance using various charts and graphs.</p>
+
+<p>The dashboard was built using HTML, CSS, and JavaScript.</p>
+    </div>
     `,
     startDate: 'April 2020',
     endDate: 'June 2020',

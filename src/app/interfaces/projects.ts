@@ -19,13 +19,13 @@ export const projectsData: Project[] = [
     company: 'Adam Augustsson AB',
     href: 'https://www.adamaugustsson.se',
     description: `
-     <ul class="text-color-grey mb-3 p-0">
-    <li>Designed and built a personal website for a tattoo artist and painter to showcase artwork and services.</li>
-    <li>Integrated a fully functional webshop using the Shopify API to manage products, inventory, and orders.</li>
-    <li>Developed the frontend with Angular and TypeScript, focusing on responsiveness and user experience.</li>
-    <li>Implemented custom components and features to reflect the artist's unique brand and style.</li>
-    <li>Handled all aspects of the project from concept to deployment.</li>
-  </ul>
+     <div class="text-color-grey mb-3 p-0">
+  <p>Designed and built a personal website for a tattoo artist and painter to showcase artwork and services.</p>
+    <p>Integrated a fully functional webshop using the Shopify API to manage products, inventory, and orders.</p>
+    <p>Developed the frontend with Angular and TypeScript, focusing on responsiveness and user experience.</p>
+    <p>Implemented custom components and features to reflect the artist's unique brand and style.</p>
+    <p>Handled all aspects of the project from concept to deployment.</p>
+  </div>
     `,
     startDate: '2024-01-01',
     endDate: '2024-05-01',
